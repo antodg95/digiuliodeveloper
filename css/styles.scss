@@ -8,7 +8,10 @@
 .container {
   height: 100vh;
 }
-/*----------------------------Overlay NavBar---------------------------------*/
+$blue: #05386B;
+$green: rgb(92,219,149);
+$white: #EDF5E1; /*----------------------------Overlay NavBar---------------------------------*/
+
 .overlay {
   height: 100%;
   width: 0;
@@ -16,7 +19,7 @@
   z-index: 1;
   left: 0;
   top: 0;
-  background-color: rgba(92,219,149,1);
+  background-color: $green;
   overflow: hidden;
   transition: 0.5s;
 }
@@ -26,7 +29,7 @@
   top: 20px;
   right: 45px;
   font-size: 30px;
-  color: #05386B;
+  color: $blue;
   cursor: pointer;
   transition: 0.5s;
   display: block;
@@ -49,13 +52,13 @@
       a {
         display: block;
         text-decoration: none;
-        color: #05386B;
+        color: $blue;
         font-size: 2em;
         transition-property: color;
         transition: 0.5s;
 
         &:hover {
-          color: #EDF5E1;
+          color: $white;
         }
 
         &:focus {
@@ -66,6 +69,7 @@
   }
 }
 /*--------------------------Here Starts the Content--------------------------*/
+
 #landing-container {
   background-image: url("../images/asd-min.webp");
   background-position: center;
@@ -74,7 +78,7 @@
   grid-template-rows: 40% 60%;
 
   div {
-    background-color: rgba(92,219,149,0.8);
+    background-color: rgba($green, 0.8);
   }
 }
 
@@ -93,7 +97,7 @@
 }
 
 .main-text {
-  color: #EDF5E1;
+  color: $white;
   font-size: 1.7em;
   text-align: center;
   display: flex;
@@ -125,25 +129,27 @@
 
 .lateral-navbar {
   display: none;
-  color: #05386B;
+  color: $blue;
 }
 /*-----------------------------Title Presets---------------------------------*/
+
 .title {
-  color: rgba(237,245,225,0.5);
+  color: rgba($white, 0.5);
   text-align: center;
   font-size: 3em;
   padding-bottom: 2vh;
+  grid-column: span 2;
 }
 
 .blue-bg {
-  background-color: #05386B;
+  background-color: $blue;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   padding-bottom: 5vh;
 }
 
 .green-bg {
-  background-color: rgba(92,219,149,1);
+  background-color: $green;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   padding-bottom: 5vh;
@@ -151,21 +157,21 @@
 
 .limited-width {
   width: 90vw;
-  padding-left: 5vw;
+  margin-left: 5vw;
 }
 /*---------------------------About Me----------------------------------------*/
-
 .about-me {
   #who-am-i {
-    color: rgba(237,245,225,1);
+    color: $white;
     text-align: center;
   }
 }
 /*----------------------------Skills------------------------------------------*/
+
 .skills-grid {
   color: black;
   display: grid;
-  grid-template-columns: 100%;
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
   justify-items: center;
   grid-row-gap: 10px;
@@ -173,8 +179,8 @@
 
 .grid-item {
   margin-top: 20px;
-  width: 30vh;
-  height: 30vh;
+  width: 25vw;
+  height: 25vw;
   color: black;
   text-transform: lowercase;
   display: flex;
@@ -182,12 +188,12 @@
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  background-color: #EDF5E1;
+  background-color: $white;
   box-shadow: 0 7px 10px rgba(5,56,107,0.7);
 
   .icon {
     border-radius: 50%;
-    transform: translateY(-80%);
+    transform: translateY(-50%);
     width: 6vh;
     height: 6vh;
   }
@@ -198,44 +204,146 @@
 }
 /*-----------------------------Projects--------------------------------------*/
 
-.table-grid {
-
-  display: flex;
-  align-items: center;
+.projects-grid {
+  display: grid;
   justify-content: center;
+  align-items: center;
+  grid-gap: 10px;
 
-  table {
-    text-align: center;
-    overflow: scroll;
-    th, td {
-      color : #EDF5E1;
-      border: 1px solid #EDF5E1;
-      padding: 15px;
+  a {
+    width: 60vw;
+    height: 25vh;
+    text-decoration: none;
+    display: block;
+    background-color: $white;
+    color: $blue;
+    border-radius: 10px;
+    padding: 20px;
+    transition: 0.5s;
+
+    &:hover {
+      background-color: $green;
     }
 
-    th {
-      text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
-      background-color: rgba(92,219,149,1);
-    }
+    .project {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
 
-    td, tr {
-    }
-    a {
-      color: inherit;
+      div {
+        padding: 5px 0;
+        text-align: center;
+        border-bottom: 1px solid $blue;
+      }
+
+      .click-tip {
+        font-style: italic;
+        font-size: 0.7em;
+        color: rgb(162,162,162);
+        border: none;
+      }
     }
   }
 }
-
 /*------------------------------Contact Me-----------------------------------*/
 
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .form-contact {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background-color: $white;
+  padding: 20px;
+  width: 80%;
+  border-radius: 20px;
+  align-self: center;
+  justify-self: center;
+  box-shadow: 0 7px 10px rgba(5,56,107,0.7);
+
+  form {
+    display: grid;
+    grid-gap: 10px;
+
+    input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      background-color: transparent;
+      border-bottom: 1px solid $blue;
+      padding: 12px 20px;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 12px 20px;
+      overflow: auto;
+      border: 0;
+      outline: 0;
+      background-color: transparent;
+      border-bottom: 1px solid $blue;
+    }
+  }
+
+  input[type=submit] {
+    padding: 12px 20px;
+    color: $white;
+    background-color: $blue;
+    border-radius: 10px;
+    width: 40vh;
+    margin-top: 10px;
+    justify-self: center;
+
+    &:hover {
+      background-color: $green;
+      color: $blue;
+    }
+  }
+}
+/*---------------------------------Footer-------------------------------------*/
+
+footer {
+  color: $white;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+
+  div {
+    padding-top: 20px;
+  }
+
+  .social-bar {
+    ul {
+      list-style: none;
+      display: flex;
+
+      li {
+        padding-left: 5px;
+
+        a {
+          display: block;
+          text-decoration: none;
+          color: $white;
+          font-size: 2em;
+          transition-property: color;
+          transition: 0.5s;
+
+          &:hover {
+            color: $green;
+          }
+        }
+      }
+    }
+  }
 }
-
-
-
 /*-----------------------------Animation Keyframes---------------------------*/
 @keyframes pulse {
   0% {
@@ -266,7 +374,7 @@
 
   .title {
     font-size: 5em;
-    grid-column: span 2;
+    grid-column: span 3;
   }
 
   .about-me #who-am-i {
@@ -274,7 +382,12 @@
   }
 
   .skills-grid {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .grid-item {
+    width: 20vw;
+    height: 20vw;
   }
 }
 /* Medium devices (landscape tablets, 768px and up) */
@@ -290,6 +403,20 @@
   .main-text {
     font-size: 1.8em;
   }
+
+  .form-contact {
+    width: 70%;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+
+    a {
+      width: 35vw;
+      height: 25vh;
+      justify-self: center;
+    }
+  }
 }
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
@@ -302,7 +429,7 @@
   }
 
   .title {
-    grid-column: span 3;
+    grid-column: span 4;
   }
 
   .about-me #who-am-i {
@@ -310,7 +437,21 @@
   }
 
   .skills-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .form-contact {
+    width: 50%;
+  }
+
+  .projects-grid {
     grid-template-columns: 1fr 1fr 1fr;
+
+    a {
+      width: 25vw;
+      height: 25vh;
+      justify-self: center;
+    }
   }
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -364,7 +505,7 @@
             transition: 0.5s;
 
             &:hover {
-              color: #EDF5E1;
+              color: $white;
             }
           }
         }
@@ -373,8 +514,17 @@
   }
 
   .limited-width {
-    width: 80vw;
-    margin-left: 10vw;
+    width: 90vw;
+    margin-left: 5vw;
     padding-left: 0;
+  }
+
+  .grid-item {
+    width: 18vw;
+    height: 18vw;
+  }
+
+  .form-contact {
+    width: 40%;
   }
 }

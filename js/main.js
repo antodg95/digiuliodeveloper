@@ -22,30 +22,34 @@ request.onload = function() {
 }
 
 function writeTable(projects) {
-  var div = document.getElementById("projects");
-  var table = document.getElementById("projects-table");
-  table.appendChild(document.createElement('tbody'));
-  table = document.getElementById("projects-table").getElementsByTagName('tbody')[0];
-  var row, cell1, cell2, cell3, name, description, a, link;
+  var view = document.getElementById("projects-view");
+  var a, div, div1, div2, div3;
   for (index = 0; index < projects.length; index++) {
-
-    row = table.insertRow(-1);
-
-    cell1 = row.insertCell(0);
-    cell2 = row.insertCell(1);
-    cell3 = row.insertCell(2);
-
-    cell1.setAttribute('data-label', "Project Name");
-    cell1.textContent = projects[index].name;
-
-    cell2.setAttribute('data-label', "Description");
-    cell2.textContent = projects[index].description;
-
     a = document.createElement('a');
-    a.setAttribute('href', projects[index].html_url);
-    a.setAttribute('target', "_blank");
-    a.innerHTML = projects[index].html_url;
-    cell3.setAttribute('data-label', "View Source Code");
-    cell3.appendChild(a);
+    a.setAttribute("href", projects[index].html_url);
+    a.setAttribute("target", "_blank");
+
+    div = document.createElement('div');
+    div.classList.add("project");
+
+    div1 = document.createElement('div');
+    div1.classList.add("project-name");
+    div1.textContent = projects[index].name;
+
+    div2 = document.createElement('div');
+    div2.classList.add("project-description");
+    div2.textContent = projects[index].description;
+
+    div3 = document.createElement('div');
+    div3.classList.add("click-tip");
+    div3.textContent = "Click to view Source Code";
+
+
+    div.appendChild(div1);
+    div.appendChild(div2);
+    div.appendChild(div3);
+    a.appendChild(div)
+    view.appendChild(a);
+
   }
 }
