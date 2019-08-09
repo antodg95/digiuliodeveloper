@@ -22,8 +22,8 @@
       <ul id="overlay-navbar">
         <li><a href="#about-me">about me</a></li>
         <li><a href="#skills">skills</a></li>
-        <li><a href="#">education</a></li>
-        <li><a href="#">contact</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#contact-me">contact</a></li>
       </ul>
     </div>
   </nav>
@@ -54,8 +54,8 @@
       <ul>
         <li><a href="#about-me">about me</a></li>
         <li><a href="#skills">skills</a></li>
-        <li><a href="#">education</a></li>
-        <li><a href="#">contact</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#contact-me">contact</a></li>
       </ul>
     </div>
   </div>
@@ -190,9 +190,48 @@
     </div>
   </div>
 
-  <div id="education" class="blue-bg">
-    <div class="title">EDUCATION</div>
+  <div id="projects" class="blue-bg">
+    <div class="title">PROJECTS</div>
+    <div class="table-grid">
+      <table id="projects-table">
+        <thead>
+          <tr>
+            <th>Project Name</th>
+            <th>Description</th>
+            <th>View Source Code</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
   </div>
+
+  <div id="contact-me" class="green-bg">
+    <div class="title">CONTACT ME</div>
+    <div class="form-contact">
+      <form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
+        <div class="row">
+          <label class="required" for="name">Your name:</label><br />
+          <input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+          <span id="name_validation" class="error_message"></span>
+        </div>
+        <div class="row">
+          <label class="required" for="email">Your email:</label><br />
+          <input id="email" class="input" name="email" type="text" value="" size="30" /><br />
+          <span id="email_validation" class="error_message"></span>
+        </div>
+        <div class="row">
+          <label class="required" for="message">Your message:</label><br />
+          <textarea id="message" class="input" name="message" rows="7" cols="30"></textarea><br />
+          <span id="message_validation" class="error_message"></span>
+        </div>
+
+        <input id="submit_button" type="submit" value="Send email" />
+      </form>
+    </div>
+  </div>
+
+  <footer class="blue-bg">
+  </footer>
 
 
   <script src="https://kit.fontawesome.com/e55db0066f.js"></script>

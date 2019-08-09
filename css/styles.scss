@@ -196,7 +196,46 @@
     transform: translateY(-2vh);
   }
 }
-/*-----------------------------Schooling-------------------------------------*/
+/*-----------------------------Projects--------------------------------------*/
+
+.table-grid {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  table {
+    text-align: center;
+    overflow: scroll;
+    th, td {
+      color : #EDF5E1;
+      border: 1px solid #EDF5E1;
+      padding: 15px;
+    }
+
+    th {
+      text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+      background-color: rgba(92,219,149,1);
+    }
+
+    td, tr {
+    }
+    a {
+      color: inherit;
+    }
+  }
+}
+
+/*------------------------------Contact Me-----------------------------------*/
+
+.form-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 /*-----------------------------Animation Keyframes---------------------------*/
 @keyframes pulse {
   0% {
