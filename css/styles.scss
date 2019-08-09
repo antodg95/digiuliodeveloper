@@ -300,6 +300,8 @@ $white: #EDF5E1; /*----------------------------Overlay NavBar-------------------
     width: 40vh;
     margin-top: 10px;
     justify-self: center;
+    transition: 0.5s;
+    cursor: pointer;
 
     &:hover {
       background-color: $green;
