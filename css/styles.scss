@@ -3,6 +3,12 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
+  border: 0 solid red;
+}
+
+body, html {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .container {
@@ -10,10 +16,10 @@
 }
 $blue: #05386B;
 $green: rgb(92,219,149);
-$white: #EDF5E1; /*----------------------------Overlay NavBar---------------------------------*/
-
+$white: #EDF5E1;
+/*----------------------------Overlay NavBar---------------------------------*/
 .overlay {
-  height: 100%;
+  height: 100vh;
   width: 0;
   position: fixed;
   z-index: 1;
@@ -69,16 +75,15 @@ $white: #EDF5E1; /*----------------------------Overlay NavBar-------------------
   }
 }
 /*--------------------------Here Starts the Content--------------------------*/
-
 #landing-container {
   background-image: url("../images/asd-min.webp");
   background-position: center;
   background-size: cover;
-  display: grid;
-  grid-template-rows: 40% 60%;
 
-  div {
+  .landing-background {
     background-color: rgba($green, 0.8);
+    display: grid;
+    grid-template-rows: 40% 60%;
   }
 }
 
@@ -132,7 +137,6 @@ $white: #EDF5E1; /*----------------------------Overlay NavBar-------------------
   color: $blue;
 }
 /*-----------------------------Title Presets---------------------------------*/
-
 .title {
   color: rgba($white, 0.5);
   text-align: center;
@@ -160,6 +164,7 @@ $white: #EDF5E1; /*----------------------------Overlay NavBar-------------------
   margin-left: 5vw;
 }
 /*---------------------------About Me----------------------------------------*/
+
 .about-me {
   #who-am-i {
     color: $white;
@@ -167,7 +172,6 @@ $white: #EDF5E1; /*----------------------------Overlay NavBar-------------------
   }
 }
 /*----------------------------Skills------------------------------------------*/
-
 .skills-grid {
   color: black;
   display: grid;
@@ -179,8 +183,8 @@ $white: #EDF5E1; /*----------------------------Overlay NavBar-------------------
 
 .grid-item {
   margin-top: 20px;
-  width: 25vw;
-  height: 25vw;
+  width: 40vw;
+  height: 40vw;
   color: black;
   text-transform: lowercase;
   display: flex;
@@ -190,20 +194,20 @@ $white: #EDF5E1; /*----------------------------Overlay NavBar-------------------
   border-radius: 20px;
   background-color: $white;
   box-shadow: 0 7px 10px rgba(5,56,107,0.7);
+  position: relative;
 
   .icon {
     border-radius: 50%;
+    position: absolute;
+    top: 0;
     transform: translateY(-50%);
     width: 6vh;
     height: 6vh;
   }
 
-  div {
-    transform: translateY(-2vh);
-  }
+  div {}
 }
 /*-----------------------------Projects--------------------------------------*/
-
 .projects-grid {
   display: grid;
   justify-content: center;
@@ -249,7 +253,6 @@ $white: #EDF5E1; /*----------------------------Overlay NavBar-------------------
   }
 }
 /*------------------------------Contact Me-----------------------------------*/
-
 .centered {
   display: flex;
   align-items: center;
@@ -270,10 +273,11 @@ $white: #EDF5E1; /*----------------------------Overlay NavBar-------------------
 
   form {
     display: grid;
+    align-items: center;
+    justify-content: center;
     grid-gap: 10px;
 
     input {
-      width: 100%;
       border: 0;
       outline: 0;
       background-color: transparent;
@@ -282,7 +286,6 @@ $white: #EDF5E1; /*----------------------------Overlay NavBar-------------------
     }
 
     textarea {
-      width: 100%;
       padding: 12px 20px;
       overflow: auto;
       border: 0;
@@ -297,7 +300,6 @@ $white: #EDF5E1; /*----------------------------Overlay NavBar-------------------
     color: $white;
     background-color: $blue;
     border-radius: 10px;
-    width: 40vh;
     margin-top: 10px;
     justify-self: center;
     transition: 0.5s;
@@ -310,36 +312,37 @@ $white: #EDF5E1; /*----------------------------Overlay NavBar-------------------
   }
 }
 /*---------------------------------Footer-------------------------------------*/
-
 footer {
-  color: $white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  .footer-div {
+    color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
-  div {
-    padding-top: 20px;
-  }
+    div {
+      padding-top: 20px;
+    }
 
-  .social-bar {
-    ul {
-      list-style: none;
-      display: flex;
+    .social-bar {
+      ul {
+        list-style: none;
+        display: flex;
 
-      li {
-        padding-left: 5px;
+        li {
+          padding-left: 5px;
 
-        a {
-          display: block;
-          text-decoration: none;
-          color: $white;
-          font-size: 2em;
-          transition-property: color;
-          transition: 0.5s;
+          a {
+            display: block;
+            text-decoration: none;
+            color: $white;
+            font-size: 2em;
+            transition-property: color;
+            transition: 0.5s;
 
-          &:hover {
-            color: $green;
+            &:hover {
+              color: $green;
+            }
           }
         }
       }
@@ -464,7 +467,9 @@ footer {
   }
 
   #landing-container {
-    display: flex;
+    .landing-background {
+      display: flex;
+    }
 
     div {
       flex-basis: 0;

@@ -1,11 +1,11 @@
 /* Open when someone clicks on the span element */
 function openNav() {
-  document.getElementById("navbar").style.width = "100%";
+  document.getElementById("navbar").style.width = "100vw";
 }
 
 /* Close when someone clicks on the "x" symbol inside the overlay */
 function closeNav() {
-  document.getElementById("navbar").style.width = "0%";
+  document.getElementById("navbar").style.width = "0vw";
 }
 
 document.getElementById('overlay-navbar').addEventListener("click", closeNav);
@@ -28,6 +28,7 @@ function writeTable(projects) {
     a = document.createElement('a');
     a.setAttribute("href", projects[index].html_url);
     a.setAttribute("target", "_blank");
+    a.setAttribute("data-aos", "slide-left");
 
     div = document.createElement('div');
     div.classList.add("project");
